@@ -1,0 +1,752 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "gd2cDJAp0x5D"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "1-What is the difference between a function and a method in Python?"
+      ],
+      "metadata": {
+        "id": "0tudya3U1XvO"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Python Method\n",
+        "\n",
+        "1-Method is called by its name, but it is associated to an object (dependent).\n",
+        "2-A method definition always includes ‘self’ as its first parameter.\n",
+        "3-A method is implicitly passed to the object on which it is invoked.\n",
+        "4-It may or may not return any data.\n",
+        "5-A method can operate on the data (instance variables) that is contained by the corresponding class"
+      ],
+      "metadata": {
+        "id": "63KHc8bl00LE"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# prompt: class ABC :\n",
+        "# \tdef method_abc (self):\n",
+        "# \t\tprint(\"I am in method_abc of ABC class. \")\n",
+        "# class_ref = ABC() # object of ABC class\n",
+        "# class_ref.method_abc()\n",
+        "\n",
+        "# What is the difference between a function and a method in Python?\n",
+        "# Python Method\n",
+        "\n",
+        "# 1-Method is called by its name, but it is associated to an object (dependent).\n",
+        "# 2-A method definition always includes ‘self’ as its first parameter.\n",
+        "# 3-A method is implicitly passed to the object on which it is invoked.\n",
+        "# 4-It may or may not return any data.\n",
+        "# 5-A method can operate on the data (instance variables) that is contained by the corresponding class\n",
+        "\n",
+        "class ABC :\n",
+        "  def method_abc (self):\n",
+        "    print(\"I am in method_abc of ABC class. \")\n",
+        "\n",
+        "class_ref = ABC() # object of ABC class\n",
+        "class_ref.method_abc()\n",
+        "\n",
+        "#Example of a function\n",
+        "def my_function(a, b):\n",
+        "  \"\"\"This is a simple function that adds two numbers.\"\"\"\n",
+        "  return a + b\n",
+        "\n",
+        "result = my_function(5, 3)\n",
+        "print(result) # Output: 8\n",
+        "\n",
+        "# Key Differences Summarized\n",
+        "\n",
+        "# Functions:\n",
+        "# * Defined independently.\n",
+        "# * Called directly using its name.\n",
+        "# * No implicit object association.\n",
+        "\n",
+        "# Methods:\n",
+        "# * Defined within a class.\n",
+        "# * Called on an object of the class (object.method_name()).\n",
+        "# * Implicitly passed the object as the first argument ('self').\n",
+        "# * Can access and modify the object's attributes (data)."
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "9hjmWr8B1UAn",
+        "outputId": "24088506-5fb7-4fd0-9afa-adf2a6bb2fdf"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "I am in method_abc of ABC class. \n",
+            "8\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Functions\n",
+        "\n",
+        "1-Function is block of code that is also called by its name. (independent)\n",
+        "2-The function can have different parameters or may not have any at all. If any data (parameters) are passed, they are passed explicitly.\n",
+        "3-It may or may not return any data.\n",
+        "4-Function does not deal with Class and its instance concept."
+      ],
+      "metadata": {
+        "id": "rBTIWWnG12Ln"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "FCBXfAmK2JnM"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def Subtract (a, b):\n",
+        "\treturn (a-b)\n",
+        "\n",
+        "print( Subtract(10, 12) ) # prints -2\n",
+        "\n",
+        "print( Subtract(15, 6) ) # prints 9\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "XyTVjbNW2Li5",
+        "outputId": "792e5639-0273-4eb5-b3e7-4fdf99a3568e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "-2\n",
+            "9\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "2-Explain the concept of function arguments and parameters in Python.\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "In Python, the difference between function parameters and arguments is that parameters are placeholders for the data that a function expects, while arguments are the actual values passed to the function when it's called:\n",
+        "Parameters\n",
+        "These are the variables listed in the parentheses of a function's definition. They define the function's signature, including the number and type of inputs it can accept. Parameters are local to the function where they are defined.\n",
+        "Arguments\n",
+        "These are the values that are passed to the function when it's called. Arguments can be mutable or immutable, depending on their data type. The number of arguments that can be passed to a function can vary.\n",
+        "Here are some other differences between parameters and arguments:\n",
+        "Default values\n",
+        "Parameters can have default values, but arguments do not.\n",
+        "Mutability\n",
+        "Parameters themselves do not change, but the value they hold can change as different arguments are passed to the function.\n",
+        "Scope\n",
+        "Arguments can be any scope, including variables that exist outside the function or literals.\n",
+        "Flexibility\n",
+        "Arguments provide flexibility to pass different values to a function, allowing for dynamic execution.\n",
+        "If a function is called with too few or too many arguments, a TypeError is raised."
+      ],
+      "metadata": {
+        "id": "n-ubShlW2Z9o"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def person_name(first_name,second_name):\n",
+        "    print(first_name+second_name)\n",
+        "\n",
+        "      # First name is Ram placed first\n",
+        "      # Second name is Babu place second\n",
+        "person_name(\"Ram\",\"Babu\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "MvYfE4V-33XE",
+        "outputId": "bde8d08c-8cda-4598-e7c8-031f5e1e9101"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "RamBabu\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "3-What are the different ways to define and call a function in Python?\n",
+        "\n",
+        "\n",
+        "##We can define a function in Python, using the def keyword. We can add any type of functionalities and properties to it as we require. By the following example, we can understand how to write a function in Python. In this way we can create Python function definition by using def keyword.\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "mnfejjko5C_w"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "pXGRAc6G5r-L"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# A simple Python function\n",
+        "def fun():\n",
+        "    print(\"Welcome to GFG\")"
+      ],
+      "metadata": {
+        "id": "frcSIWAf5tje"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Calling a Function in Python\n",
+        "After creating a function in Python we can call it by using the name of the functions Python followed by parenthesis containing parameters of that particular function. Below is the example for calling def function Python."
+      ],
+      "metadata": {
+        "id": "jPny7UQD53kE"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# A simple Python function\n",
+        "def fun():\n",
+        "    print(\"Welcome to GFG\")\n",
+        "\n",
+        "\n",
+        "    # Driver code to call a function\n",
+        "    fun()"
+      ],
+      "metadata": {
+        "id": "hk4S9y8r55zK"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "4-What is the purpose of the `return` statement in a Python function?\n",
+        "\n",
+        "\n",
+        "##The purpose of the return statement in a Python function is to:\n",
+        "End a function\n",
+        "The return statement marks the end of a function and returns control to the calling function\n",
+        "Return a value\n",
+        "The return statement specifies the value or values to pass back from the function\n",
+        "Return any type of data\n",
+        "The return statement can return data of any type, including integers, floats, strings, lists, dictionaries, and even other functions\n",
+        "Here are some more details about the return statement in Python:\n",
+        "The return statement consists of the return keyword followed by an optional return value\n",
+        "A Python function can have multiple return statements\n",
+        "The return keyword can't be used outside of a function\n",
+        "Using the return statement effectively is a core skill for coding custom functions\n",
+        "You should try to keep your code readable and maintainable by avoiding complex return statements"
+      ],
+      "metadata": {
+        "id": "G_JqqSbd6ajo"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Python program to\n",
+        "# demonstrate return statement\n",
+        "\n",
+        "def add(a, b):\n",
+        "\n",
+        "    # returning sum of a and b\n",
+        "        return a + b\n",
+        "\n",
+        "        def is_true(a):\n",
+        "\n",
+        "            # returning boolean of a\n",
+        "                return bool(a)\n",
+        "\n",
+        "                # calling function\n",
+        "                res = add(2, 3)\n",
+        "                print(\"Result of add function is {}\".format(res))\n",
+        "\n",
+        "                res = is_true(2<5)\n",
+        "                print(\"\\nResult of is_true function is {}\".format(res))"
+      ],
+      "metadata": {
+        "id": "oUo7fCUn614W"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "5-What are iterators in Python and how do they differ from iterables?\n",
+        "\n",
+        "Iterable is an object, that one can iterate over. It generates an Iterator when passed to iter() method. An iterator is an object, which is used to iterate over an iterable object using the __next__() method. Iterators have the __next__() method, which returns the next item of the object.\n",
+        "\n",
+        "Note: Every iterator is also an iterable, but not every iterable is an iterator in Python.\n",
+        "\n",
+        "For example, a list is iterable but a list is not an iterator. An iterator can be created from an iterable by using the function iter(). To make this possible, the class of an object needs either a method __iter__, which returns an iterator, or a __getitem__ method with sequential indexes starting with 0.\n",
+        "##"
+      ],
+      "metadata": {
+        "id": "mkGoWcJf7QHS"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# prompt: # code\n",
+        "# next(\"GFG\")\n",
+        "\n",
+        "def next_iter(s):\n",
+        "    it = iter(s)\n",
+        "    return next(it)\n",
+        "print(next_iter(\"GFG\"))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ql_N7FzK7p08",
+        "outputId": "d22577c9-997c-4bd3-985b-a89d7e5d0690"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "G\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# code\n",
+        "s=\"GFG\"\n",
+        "s=iter(s)\n",
+        "print(s)\n",
+        "print(next(s))\n",
+        "print(next(s))\n",
+        "print(next(s))\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "IHhVrI6Z8AxN",
+        "outputId": "ff0dc16c-df27-4136-db32-ba79601ab289"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "<str_iterator object at 0x7c14941a2590>\n",
+            "G\n",
+            "F\n",
+            "G\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# list of cities\n",
+        "cities = [\"Berlin\", \"Vienna\", \"Zurich\"]\n",
+        "\n",
+        "# initialize the object\n",
+        "iterator_obj = iter(cities)\n",
+        "\n",
+        "print(next(iterator_obj))\n",
+        "print(next(iterator_obj))\n",
+        "print(next(iterator_obj))\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7TxQKQi58G0X",
+        "outputId": "08f1d2da-c1b1-43c4-f7ee-70badc8b37ef"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Berlin\n",
+            "Vienna\n",
+            "Zurich\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "6-Explain the concept of generators in Python and how they are defined.\n",
+        "\n",
+        "\n",
+        "##A Generator in Python is a function that returns an iterator using the Yield keyword. In this article, we will discuss how the generator function works in Python.\n",
+        "\n",
+        "Generator Function in Python\n",
+        "A generator function in Python is defined like a normal function, but whenever it needs to generate a value, it does so with the yield keyword rather than return. If the body of a def contains yield, the function automatically becomes a Python generator function.\n",
+        "\n",
+        "Create a Generator in Python\n",
+        "In Python, we can create a generator function by simply using the def keyword and the yield keyword. The generator has the following syntax in Python:\n",
+        "\n",
+        "def function_name():\n",
+        "    yield statement\n",
+        "    Example:\n",
+        "\n",
+        "    In this example, we will create a simple generator that will yield three integers. Then we will print these integers by using Python for loop.\n",
+        "\n",
+        "\n",
+        "\n",
+        "    "
+      ],
+      "metadata": {
+        "id": "Q39OxBry8SQY"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# A generator function that yields 1 for first time,\n",
+        "# 2 second time and 3 third time\n",
+        "def simpleGeneratorFun():\n",
+        "    yield 1\n",
+        "    yield 2\n",
+        "    yield 3\n",
+        "\n",
+        "# Driver code to check above generator function\n",
+        "for value in simpleGeneratorFun():\n",
+        "    print(value)"
+      ],
+      "metadata": {
+        "id": "OwhMLHF78nlb"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "7-What are the advantages of using generators over regular functions?\n",
+        "\n",
+        "\n",
+        "##\n",
+        "Generators have several advantages over regular functions, including:\n",
+        "Memory efficiency\n",
+        "Generators are more memory efficient than regular functions because they only evaluate the code that's needed. Generators generate values as they're needed, so they don't need to store all the values in memory at once. This is especially useful when working with large datasets.\n",
+        "Improved performance\n",
+        "Generators can improve performance by avoiding the need to generate and store all elements upfront. They can also be faster than regular loops.\n",
+        "Lazy loading\n",
+        "Generators can be used to lazy load data, which means that the data is not loaded until it's actually needed.\n",
+        "Infinite sequences\n",
+        "Generators make it easy to create infinite sequences by allowing pausing and resuming.\n",
+        "Composability\n",
+        "Generators can be easily composed to create new generators, enabling powerful data processing pipelines.\n",
+        "Readability\n",
+        "Generators can make your code easier to read and understand by breaking up the iteration process into smaller chunks.\n",
+        "Here are some other differences between generator functions and regular functions:\n",
+        "Yield keyword: Generator functions use the keyword yield to maintain their state.\n",
+        "Execution: Generator functions only execute when next() is called on the generator object.\n",
+        "Return statement: The return statement terminates the function completely, whereas the yield keyword saves the state of the function.\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "ZiaoZ5hS9a--"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# A Python program to demonstrate use of\n",
+        "# generator object with next()\n",
+        "\n",
+        "# A generator function\n",
+        "def simpleGeneratorFun():\n",
+        "    yield 1\n",
+        "        yield 2\n",
+        "            yield 3\n",
+        "\n",
+        "             # x is a generator object\n",
+        "             x = simpleGeneratorFun()\n",
+        "\n",
+        "             # Iterating over the generator object using next\n",
+        "\n",
+        "             # In Python 3, __next__()\n",
+        "             print(next(x))\n",
+        "             print(next(x))\n",
+        "             print(next(x))"
+      ],
+      "metadata": {
+        "id": "oVWku7KB-FZ1"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "8-What is a lambda function in Python and when is it typically used?\n",
+        "\n",
+        "\n",
+        "\n",
+        "##In Python, a lambda function is a short, anonymous function that's defined without a name and is used for quick, one-time operations. Lambda functions are often used in functional programming contexts with higher-order functions like map, filter, and reduce.\n",
+        "Here are some characteristics of lambda functions:\n",
+        "Syntax: The syntax for a lambda function is lambda parameters: expression.\n",
+        "Arguments: Lambda functions can take any number of arguments.\n",
+        "Expression: Lambda functions can only contain one expression.\n",
+        "Readability: Lambda functions are more readable than regular functions because they're defined in a single line.\n",
+        "Behavior: Lambda functions behave similarly to regular functions, which are defined with the def keyword.\n",
+        "Here are some examples of using lambda functions:\n",
+        "Squaring a number: square_number = lambda x: x ** 2\n",
+        "Filtering a list: filter(lambda x: x % 2 == 0, list1)\n",
+        "Sorting a list of dictionaries: Use a lambda function as the key argument to sort a list of dictionaries based on a key"
+      ],
+      "metadata": {
+        "id": "rNGnbr2l-Iqh"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "9-Explain the purpose and usage of the `map()` function in Python.\n",
+        "\n",
+        "##The map() function in Python applies a function to every item in an iterable, such as a list or tuple, and returns the result as an iterator. The map() function is useful for:\n",
+        "Simplifying iterative operations: You can use map() to perform operations without loops, which can make code cleaner, more efficient, and use less memory.\n",
+        "Processing multiple iterables: You can use map() to process multiple input iterables.\n",
+        "Using built-in and lambda functions: You can use map() with built-in functions or lambda functions.\n",
+        "The syntax for the map() function is:\n",
+        "map(function, iterable, [iterable 2, iterable 3, ...])\n",
+        "map(lambda item: item[] expression, iterable)\n",
+        "Here are some examples of using the map() function:\n",
+        "Using a lambda expression\n",
+        "You can use a lambda expression to create an anonymous function in a single line of code.\n",
+        "Accepting multiple inputs\n",
+        "You can use map() and split() to accept multiple inputs in a single line. For example, a, b, c = map(int, input().split()) assigns integer input values to variables a, b, and c.\n",
+        "Applying a custom function\n",
+        "You can use map() to apply a custom function to elements of multiple lists simultaneously. For example, mapped_numbers = list(map(lambda x: x * 2 + 3, numbers))."
+      ],
+      "metadata": {
+        "id": "52E4Ihmv-m4A"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "10-What is the difference between `map()`, `reduce()`, and `filter()` functions in Python?\n",
+        "\n",
+        "\n",
+        "##Map Reduce and Filter Operations in Python\n",
+        "Below, are examples of Map Reduce and Filter Operations in Python:\n",
+        "\n",
+        "map() Function\n",
+        "Reduce() Function\n",
+        "Filter() Function\n",
+        "Map Function in Python\n",
+        "The map () function returns a map object(which is an iterator) of the results after applying the given function to each item of a given iterable (list, tuple, etc.).\n",
+        "\n",
+        "Syntax: map(fun, iter)\n",
+        "\n",
+        "\n",
+        "\n",
+        "Parameters:\n",
+        "\n",
+        "\n",
+        "\n",
+        "fun: It is a function to which map passes each element of given iterable.\n",
+        "iter:  iterable object to be mapped.\n",
+        "Example: In this example, Python program showcases the usage of the map function to double each number in a given list by applying the double function to each element, and then printing the result as a list."
+      ],
+      "metadata": {
+        "id": "rxrrHKhn_GGu"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# prompt: # Function to return double of n\n",
+        "# def double(n):\n",
+        "#     return n * 2\n",
+        "# # Using map to double all numbers\n",
+        "# numbers = [5, 6, 7, 8]\n",
+        "# result = map(double, numbers)\n",
+        "# print(list(result))\n",
+        "\n",
+        "# Function to return double of n\n",
+        "def double(n):\n",
+        "    return n * 2\n",
+        "# Using map to double all numbers\n",
+        "numbers = [5, 6, 7, 8]\n",
+        "result = map(double, numbers)\n",
+        "print(list(result))"
+      ],
+      "metadata": {
+        "id": "WW9VvgN9_djx"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Reduce Function in Python\n",
+        "The reduce function is used to apply a particular function passed in its argument to all of the list elements mentioned in the sequence passed along.This function is defined in “functools” module.\n",
+        "\n",
+        "Syntax: reduce(func, iterable[, initial])\n",
+        "\n",
+        "\n",
+        "\n",
+        "Parameters:\n",
+        "\n",
+        "\n",
+        "\n",
+        "fun: It is a function to execuate on each element of the iterable objec\n",
+        "iter: It is iterable to be reduced"
+      ],
+      "metadata": {
+        "id": "84wbZ-xN_mnV"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# prompt: import functools\n",
+        "# # Define a list of numbers\n",
+        "# numbers = [1, 2, 3, 4]\n",
+        "# # Use reduce to compute the product of list elements\n",
+        "# product = functools.reduce(lambda x, y: x * y, numbers)\n",
+        "# print(\"Product of list elements:\", product)\n",
+        "\n",
+        "import functools\n",
+        "\n",
+        "# Define a list of numbers\n",
+        "numbers = [1, 2, 3, 4]\n",
+        "\n",
+        "# Use reduce to compute the product of list elements\n",
+        "product = functools.reduce(lambda x, y: x * y, numbers)\n",
+        "print(\"Product of list elements:\", product)"
+      ],
+      "metadata": {
+        "id": "1eJKY09X_piR"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Filter Function in Python\n",
+        "The filter() method filters the given sequence with the help of a function that tests each element in the sequence to be true or not.\n",
+        "\n",
+        "Syntax: filter(function, sequence)\n",
+        "\n",
+        "\n",
+        "\n",
+        "Parameters:\n",
+        "\n",
+        "\n",
+        "\n",
+        "function: function that tests if each element of a sequence is true or not.\n",
+        "sequence: sequence which needs to be filtered, it can be sets, lists, tuples, or containers of any iterators."
+      ],
+      "metadata": {
+        "id": "uG4mAGjr_xJ1"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Define a function to check if a number is even\n",
+        "def is_even(n):\n",
+        "    return n % 2 == 0\n",
+        "\n",
+        "    # Define a list of numbers\n",
+        "    numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\n",
+        "\n",
+        "    # Use filter to filter out even numbers\n",
+        "    even_numbers = filter(is_even, numbers)\n",
+        "    print(\"Even numbers:\", list(even_numbers))"
+      ],
+      "metadata": {
+        "id": "pIZoAB3i_yKH"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "higyIQO4_0NX"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
